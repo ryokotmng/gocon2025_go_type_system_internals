@@ -1,0 +1,9 @@
+TEXT main.main(SB) /Users/ryokotmng/projects/go_conference_2025/sample_code/typed-nil/nil/main.go
+  main.go:3		0x1000695f0		f81e0ffe		MOVD.W R30, -32(RSP)	
+  main.go:3		0x1000695f4		f81f83fd		MOVD R29, -8(RSP)	
+  main.go:3		0x1000695f8		d10023fd		SUB $8, RSP, R29	
+  main.go:4		0x1000695fc		f9000bff		MOVD ZR, 16(RSP)	
+  main.go:5		0x100069600		14000001		JMP 1(PC)		
+  main.go:6		0x100069604		910063fd		ADD $24, RSP, R29	
+  main.go:6		0x100069608		910083ff		ADD $32, RSP, RSP	
+  main.go:6		0x10006960c		d65f03c0		RET			
