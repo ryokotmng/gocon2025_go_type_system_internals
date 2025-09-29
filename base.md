@@ -252,7 +252,7 @@ type InterfaceType struct {
 
 ## （参考）空 interface と具象 interface のコンパイル時型情報
 
-src/internal/abi/type.go
+src/internal/abi/iface.go
 
 ```go
 // EmptyInterface describes the layout of a "interface{}" or a "any."
