@@ -231,20 +231,14 @@ func returnsNilError(bad bool) error {
 
 `itab` はメソッドポインタの配列になっており、実体型と interface のメソッドセットを対応付けする。メソッド呼び出しは `itab` 経由で実行時に動的ディスパッチ（実行時に多態的な操作（メソッドまたは関数）のどの実装を呼び出すかを選択するプロセス）を行う。
 
-src/internal/abi/type.go
+src/internal/abi/iface.go
 
 ```go
 type ITab struct {
-	Inter *InterfaceType // 実装しているインターフェース型
+	Inter *InterfaceType // 実装しているインターフェース型の型情報
 	Type  *Type      // 基底となる具象型
 	Hash  uint32     // Type.Hash のコピー。型スイッチに使用される
 	Fun   [1]uintptr // 実際には可変長サイズ。fun[0]==0 の場合、Type が Inter を実装していないことを意味する
-}
-
-type InterfaceType struct {
-	Type
-	PkgPath Name      // import path
-	Methods []Imethod // sorted by hash
 }
 ```
 
